@@ -3,10 +3,13 @@ package edu.eci.arsw.blueprints.filter.impl;
 import edu.eci.arsw.blueprints.filter.BlueprintFilter;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Set;
 
+@Component("redFilter")
 public class RedundancyBlueprintFilter implements BlueprintFilter {
     /**
      * @param blueprint The blueprint to filter

@@ -12,6 +12,7 @@ import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.persistence.BlueprintsPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -19,15 +20,14 @@ import java.util.Set;
 /**
  * @author hcadavid
  */
-@Service
+@Component("bpServices")
 public class BlueprintsServices {
 
     @Autowired
-    @Qualifier("inMemorybp")
     private BlueprintsPersistence bpp = null;
 
     @Autowired
-    @Qualifier("subsamFilter")
+    @Qualifier("subFilter")
     private BlueprintFilter bpf = null;
 
     public void addNewBlueprint(Blueprint bp) throws BlueprintPersistenceException {
