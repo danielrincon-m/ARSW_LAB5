@@ -31,12 +31,24 @@ public class Blueprint {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getAuthor() {
         return author;
     }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public ArrayList<Point> getPoints() {
         return new ArrayList<>(points);
+    }
+
+    public void setPoints(ArrayList<Point> points) {
+        this.points = points;
     }
 
     public void addPoint(Point p) {

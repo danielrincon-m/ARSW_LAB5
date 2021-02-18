@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 @Component("redFilter")
@@ -41,9 +42,10 @@ public class RedundancyBlueprintFilter implements BlueprintFilter {
      */
     @Override
     public Set<Blueprint> filter(Set<Blueprint> blueprints) {
+        HashSet<Blueprint> filteredBlueprints = new HashSet<>();
         for (Blueprint bp : blueprints) {
-            filter(bp);
+            filteredBlueprints.add(filter(bp));
         }
-        return blueprints;
+        return filteredBlueprints;
     }
 }

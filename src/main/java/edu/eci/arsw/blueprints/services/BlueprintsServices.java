@@ -5,6 +5,8 @@
  */
 package edu.eci.arsw.blueprints.services;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import edu.eci.arsw.blueprints.filter.BlueprintFilter;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
@@ -27,7 +29,8 @@ public class BlueprintsServices {
     private BlueprintsPersistence bpp = null;
 
     @Autowired
-    @Qualifier("subFilter")
+//    @Qualifier("subFilter")
+    @Qualifier("redFilter")
     private BlueprintFilter bpf = null;
 
     public void addNewBlueprint(Blueprint bp) throws BlueprintPersistenceException {
@@ -55,6 +58,16 @@ public class BlueprintsServices {
      */
     public Set<Blueprint> getBlueprintsByAuthor(String author) throws BlueprintNotFoundException {
         return bpf.filter(bpp.getBlueprintsByAuthor(author));
+    }
+
+    public String getBlueprintsJson(Set<Blueprint> blueprints) {
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(blueprints);
+    }
+
+    public String getBlueprintJson(Blueprint blueprint) {
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(blueprint);
     }
 
     public void setBpp(BlueprintsPersistence bpp) {
