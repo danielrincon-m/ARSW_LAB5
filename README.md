@@ -153,6 +153,6 @@ Escriba su análisis y la solución aplicada en el archivo ANALISIS_CONCURRENCIA
 
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/III.png)
 
-![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/III-2.png)
+[ANALISIS_CONCURRENCIA.txt](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/ANALISIS_CONCURRENCIA.txt)
 
 
