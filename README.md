@@ -5,6 +5,10 @@
 
 
 ## Laboratorio API REST para la gestión de planos
+> INTEGRANES 
+> Paula Andres Guevara Sánchez
+> Daniel Felipe Rincon Muñoz
+> Laura Alejandra Bernal Hernandez 
 
 ### Dependencias
 * [Laboratorio Componentes y conectores Middleware- gestión de planos (Blueprints) Parte 1](https://github.com/ARSW-ECI-beta/REST_API-JAVA-BLUEPRINTS_PART1)
