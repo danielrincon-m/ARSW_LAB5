@@ -90,7 +90,6 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/I-6.3.png)
 
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/Error.png)
-
 ---
 ### Parte II 📂
 
