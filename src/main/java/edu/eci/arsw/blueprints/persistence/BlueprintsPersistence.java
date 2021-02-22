@@ -21,6 +21,8 @@ public interface BlueprintsPersistence {
      */
     void saveBlueprint(Blueprint bp) throws BlueprintPersistenceException;
 
+    void updateBlueprint(Blueprint bp) throws BlueprintPersistenceException;
+
     /**
      * @param author     blueprint's author
      * @param bprintname blueprint's author

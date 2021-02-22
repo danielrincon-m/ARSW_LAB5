@@ -69,44 +69,44 @@ public class InMemoryPersistenceTest {
     }
 
 
-//    @Test
-//    public void getBlueprintsByAuthorTest() {
-//        InMemoryBlueprintPersistence ibpp = new InMemoryBlueprintPersistence();
-//        String author = "Pau";
-//
-//        try {
-//            ibpp.getBlueprintsByAuthor(author);
-//            fail("An exception was expected after searching for an author without blueprints");
-//        } catch (BlueprintNotFoundException e) {
-//            //Pass
-//        }
-//
-//        ArrayList<Point> pts = new ArrayList<>(Arrays.asList(new Point(0, 0), new Point(10, 10)));
-//        Blueprint bp = new Blueprint(author, "El significado de la nada", pts);
-//
-//        try {
-//            ibpp.saveBlueprint(bp);
-//        } catch (BlueprintPersistenceException ex) {
-//            fail("Blueprint persistence failed inserting the first blueprint.");
-//        }
-//
-//        ArrayList<Point> pts2 = new ArrayList<>(Arrays.asList(new Point(10, 10), new Point(20, 20)));
-//        Blueprint bp2 = new Blueprint(author, "El ocaso", pts2);
-//
-//        try {
-//            ibpp.saveBlueprint(bp2);
-//        } catch (BlueprintPersistenceException ex) {
-//            fail("Blueprint persistence failed inserting the second blueprint.");
-//        }
-//
-//        try {
-//            HashSet<Blueprint> bps = (HashSet<Blueprint>) ibpp.getBlueprintsByAuthor(author);
-//            assertEquals(2, bps.size());
-//            for (Blueprint blueprint : bps) {
-//                assertEquals(author, blueprint.getAuthor());
-//            }
-//        } catch (BlueprintNotFoundException ex) {
-//            fail("Blueprint persistence failed returning blueprints set.");
-//        }
-//    }
+    @Test
+    public void getBlueprintsByAuthorTest() {
+        InMemoryBlueprintPersistence ibpp = new InMemoryBlueprintPersistence();
+        String author = "Pau";
+
+        try {
+            ibpp.getBlueprintsByAuthor(author);
+            fail("An exception was expected after searching for an author without blueprints");
+        } catch (BlueprintNotFoundException e) {
+            //Pass
+        }
+
+        ArrayList<Point> pts = new ArrayList<>(Arrays.asList(new Point(0, 0), new Point(10, 10)));
+        Blueprint bp = new Blueprint(author, "El significado de la nada", pts);
+
+        try {
+            ibpp.saveBlueprint(bp);
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the first blueprint.");
+        }
+
+        ArrayList<Point> pts2 = new ArrayList<>(Arrays.asList(new Point(10, 10), new Point(20, 20)));
+        Blueprint bp2 = new Blueprint(author, "El ocaso", pts2);
+
+        try {
+            ibpp.saveBlueprint(bp2);
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the second blueprint.");
+        }
+
+        try {
+            HashSet<Blueprint> bps = (HashSet<Blueprint>) ibpp.getBlueprintsByAuthor(author);
+            assertEquals(2, bps.size());
+            for (Blueprint blueprint : bps) {
+                assertEquals(author, blueprint.getAuthor());
+            }
+        } catch (BlueprintNotFoundException ex) {
+            fail("Blueprint persistence failed returning blueprints set.");
+        }
+    }
 }

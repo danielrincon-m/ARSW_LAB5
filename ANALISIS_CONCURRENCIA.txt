@@ -1,0 +1,14 @@
+- Posibles condiciones de carrera
+
+    Las posibles condiciones de carrera se encuentran en la memoria, debido a que cuando se agregan o se actualizan los
+    planos, no se cuenta con ninguna protección al acceder concurrentemente al mapa que hace el rol de memoria.
+
+- Regiones críticas
+
+    Las regiones críticas son todos los métodos que acceden a la memoria.
+
+- Solución aplicada
+
+    Debido a que todos los problemas de concurrencia se centran en el HashMap que cumple el rol de memoria, decidimos
+    utilizar una version Thread-Safe de esta estructura de datos cuya implementación en Java se llama ConcurrentHashMap,
+    de esta forma tendremos protección sobre el acceso concurrente a los planos.

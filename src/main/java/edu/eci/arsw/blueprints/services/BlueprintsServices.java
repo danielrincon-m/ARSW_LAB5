@@ -15,7 +15,6 @@ import edu.eci.arsw.blueprints.persistence.BlueprintsPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -35,6 +34,10 @@ public class BlueprintsServices {
 
     public void addNewBlueprint(Blueprint bp) throws BlueprintPersistenceException {
         bpp.saveBlueprint(bp);
+    }
+
+    public void updateBlueprint(Blueprint bp) throws BlueprintPersistenceException {
+        bpp.updateBlueprint(bp);
     }
 
     public Set<Blueprint> getAllBlueprints() throws BlueprintNotFoundException {

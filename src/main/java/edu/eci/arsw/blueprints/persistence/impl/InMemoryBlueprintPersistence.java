@@ -13,6 +13,7 @@ import edu.eci.arsw.blueprints.persistence.BlueprintsPersistence;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author hcadavid
@@ -20,7 +21,7 @@ import java.util.*;
 @Component("inMemorybp")
 public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
 
-    private final Map<Tuple<String, String>, Blueprint> blueprints = new HashMap<>();
+    private final Map<Tuple<String, String>, Blueprint> blueprints = new ConcurrentHashMap<>();
 
     public InMemoryBlueprintPersistence() {
         //load stub data
@@ -45,6 +46,18 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
             throw new BlueprintPersistenceException("The given blueprint already exists: " + bp);
         } else {
             blueprints.put(new Tuple<>(bp.getAuthor(), bp.getName()), bp);
+        }
+    }
+
+    @Override
+    public void updateBlueprint(Blueprint bp) throws BlueprintPersistenceException {
+        if (blueprints.containsKey(new Tuple<>(bp.getAuthor(), bp.getName()))) {
+            Blueprint actualBlueprint = blueprints.get(new Tuple<>(bp.getAuthor(), bp.getName()));
+            actualBlueprint.setAuthor(bp.getAuthor());
+            actualBlueprint.setName(bp.getName());
+            actualBlueprint.setPoints(bp.getPoints());
+        } else {
+            throw new BlueprintPersistenceException("The given blueprint does not exists: " + bp);
         }
     }
 

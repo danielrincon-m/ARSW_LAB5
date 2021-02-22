@@ -74,6 +74,17 @@ public class BlueprintAPIController {
         }
     }
 
+    @RequestMapping(value = "/blueprints/{author}/{bpname}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> manejadorPutBlueprint(@RequestBody Blueprint blueprint){
+        try {
+            bps.updateBlueprint(blueprint);
+            return new ResponseEntity<>("Se ha actualizado el plano exitosamente.", HttpStatus.ACCEPTED);
+        } catch (BlueprintPersistenceException ex) {
+            Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("No se ha podido registrar el plano :(",HttpStatus.FORBIDDEN);
+        }
+    }
+
     public void setBps(BlueprintsServices bps) {
         this.bps = bps;
     }
