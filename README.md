@@ -6,9 +6,9 @@
 
 ## Laboratorio API REST para la gestión de planos
 > INTEGRANES: 
-> Paula Andres Guevara Sánchez,
-> Daniel Felipe Rincon Muñoz,
-> Laura Alejandra Bernal Hernandez.
+	> Paula Andres Guevara Sánchez,
+	> Daniel Felipe Rincon Muñoz,
+	> Laura Alejandra Bernal Hernandez.
 
 ### Dependencias
 * [Laboratorio Componentes y conectores Middleware- gestión de planos (Blueprints) Parte 1](https://github.com/ARSW-ECI-beta/REST_API-JAVA-BLUEPRINTS_PART1)
@@ -27,8 +27,8 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 
 
 ![](img/ClassDiagram.png)
-
-### Parte I
+---
+### Parte I 📂
 
 1. Integre al proyecto base suministrado los Beans desarrollados en el ejercicio anterior. Sólo copie las clases, NO los archivos de configuración. Rectifique que se tenga correctamente configurado el esquema de inyección de dependencias con las anotaciones @Service y @Autowired.
 
@@ -91,8 +91,8 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/Error.png)
 
-
-### Parte II
+---
+### Parte II 📂
 
 1.  Agregue el manejo de peticiones POST (creación de nuevos planos), de manera que un cliente http pueda registrar una nueva orden haciendo una petición POST al recurso ‘planos’, y enviando como contenido de la petición todo el detalle de dicho recurso a través de un documento jSON. Para esto, tenga en cuenta el siguiente ejemplo, que considera -por consistencia con el protocolo HTTP- el manejo de códigos de estados HTTP (en caso de éxito o error):
 
@@ -139,8 +139,8 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/II-4.png)
-
-### Parte III
+---
+### Parte III 📂
 
 El componente BlueprintsRESTAPI funcionará en un entorno concurrente. Es decir, atederá múltiples peticiones simultáneamente (con el stack de aplicaciones usado, dichas peticiones se atenderán por defecto a través múltiples de hilos). Dado lo anterior, debe hacer una revisión de su API (una vez funcione), e identificar:
 
@@ -153,6 +153,6 @@ Escriba su análisis y la solución aplicada en el archivo ANALISIS_CONCURRENCIA
 
 ![](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/img/III.png)
 
-[ANALISIS_CONCURRENCIA.txt](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/ANALISIS_CONCURRENCIA.txt)
+✏️[ANALISIS_CONCURRENCIA.txt](https://github.com/danielrincon-m/ARSW_LAB5/blob/master/ANALISIS_CONCURRENCIA.txt)
 
 
